@@ -1,0 +1,1 @@
+`rerundocker.sh` is a script I used to redeploy the docker container, you don't need to use it, it was just convenient for me at the time.
