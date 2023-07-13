@@ -89,7 +89,7 @@ void setup() {
     internetConnectRetries -= 1;
 
     if (internetConnectRetries <= 0) {
-      playAudio("/sounds/internet-not-connected.wav");
+      playAudio("/internet-not-connected.wav");
     }
     delay(2500);
   }
@@ -112,7 +112,7 @@ void setup() {
   encoder.begin(cfg_out);
   micCopier.setCheckAvailableForWrite(false);
 
-  playAudio("/sounds/ready.wav");
+  playAudio("/ready.wav");
 }
 
 bool isFetching = false;
@@ -192,11 +192,11 @@ void loop() {
         decoder.end();
       } else {
         Serial.printf("Failed to send POST request, httpcode: %d\n", httpCode);
-        playAudio("/sounds/did_not_understand.wav");
+        playAudio("/did_not_understand.wav");
       }
     } else {
       Serial.printf("Failed to send POST request, error: %s\n", http.errorToString(httpCode).c_str());
-      playAudio("/sounds/did_not_understand.wav");
+      playAudio("/did_not_understand.wav");
     }
     http.end();
 
